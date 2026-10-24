@@ -24,7 +24,53 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:1
 <div class="section-title"><h3>INTELLIGENCE MODULES</h3><span class="muted" style="font-size:11px">SELECT A MODULE</span></div>
 <div class="tiles">
 <button class="tile" onclick="navigate('stories')"><div class="ico">◉</div><b>Story Radar</b><span>Live headlines, recurring leads</span></button>
-<button class="tile" onclick="navigate('courts')"><div class="ico">⚖</div><b>Court Radar</b><span>Hearings, case notes</span></button>
+<button class="tile" onclick="navigate('
+courts: {
+  title: 'Court Radar',
+  singular: 'court hearing',
+  fields: [
+    ['title', 'Case / hearing title', 'text', true],
+    ['court', 'Court and location', 'select', false, [
+      'Liverpool Crown Court',
+      'Liverpool & Knowsley Magistrates’ Court',
+      'Liverpool Civil and Family Court',
+      'Liverpool Youth Court',
+      'Other / confirm'
+    ]],
+    ['date', 'Hearing date', 'date'],
+    ['time', 'Hearing time', 'text'],
+    ['hearingType', 'Hearing type', 'select', false, [
+      'Trial',
+      'Sentencing',
+      'Plea and trial preparation',
+      'Case management',
+      'Bail application',
+      'Appeal',
+      'Civil hearing',
+      'Other / confirm'
+    ]],
+    ['status', 'Reporting status', 'select', false, [
+      'To verify',
+      'Verified against official listing',
+      'Planning attendance',
+      'Attended',
+      'Follow-up needed',
+      'Closed'
+    ]],
+    ['priority', 'Reporting priority', 'select', false, [
+      'High',
+      'Medium',
+      'Low',
+      'Unassessed'
+    ]],
+    ['source', 'Official listing / source URL', 'url'],
+    ['publicInterest', 'Potential public-interest angle', 'textarea'],
+    ['restrictions', 'Restrictions / anonymity checks', 'textarea'],
+    ['questions', 'Questions to investigate', 'textarea'],
+    ['notes', 'Reporting notes and follow-up', 'textarea']
+  ]
+},
+')"><div class="ico">⚖</div><b>Court Radar</b><span>Hearings, case notes</span></button>
 <button class="tile" onclick="navigate('investigations')"><div class="ico">⌕</div><b>Investigation Desk</b><span>Evidence and timelines</span></button>
 <button class="tile" onclick="navigate('research')"><div class="ico">▤</div><b>Research Library</b><span>Links, documents, notes</span></button>
 <button class="tile" onclick="navigate('tasks')"><div class="ico">✓</div><b>Task Centre</b><span>Actions and deadlines</span></button>
